@@ -1,0 +1,166 @@
+Date,Type,Category,Amount,Description
+2026-01-01,Income,Hardware,6300.0,Product B sale (35 units) - North region - R. Menon
+2026-01-01,Expense,Salaries,9818.0,Salaries - Jan-2026 - Payroll - ADP (Finance dept)
+2026-01-02,Expense,Travel,1580.0,Travel - Jan-2026 - CityCab Corp (Marketing dept)
+2026-01-03,Income,Accessories,2340.0,Product E sale (39 units) - East region - S. Rao
+2026-01-04,Income,Software,10500.0,Product D sale (25 units) - North region - A. Kapoor
+2026-01-07,Income,Hardware,4250.0,Product A sale (17 units) - North region - P. Sharma
+2026-01-07,Expense,Insurance,387.0,Insurance - Jan-2026 - SecureGuard Insurance (IT dept)
+2026-01-08,Income,Hardware,1620.0,Product B sale (9 units) - South region - P. Sharma
+2026-01-11,Income,Hardware,4320.0,Product B sale (24 units) - East region - R. Menon
+2026-01-12,Expense,Travel,1293.0,Travel - Jan-2026 - SkyLine Airlines (Sales dept)
+2026-01-13,Income,Software,10920.0,Product D sale (26 units) - East region - P. Sharma
+2026-01-13,Expense,Marketing,3983.0,Marketing - Jan-2026 - BrightAds Agency (IT dept)
+2026-01-14,Income,Software,8400.0,Product D sale (20 units) - South region - M. Fernandes
+2026-01-14,Expense,Marketing,3279.0,Marketing - Jan-2026 - SocialBoost Inc (Operations dept)
+2026-01-19,Expense,Rent,3000.0,Rent - Jan-2026 - Skyline Properties (Operations dept)
+2026-02-10,Expense,Office Supplies,,Blank amount - needs cleaning
+2026-01-20,Income,Accessories,2220.0,Product E sale (37 units) - North region - R. Menon
+2026-01-20,Expense,Utilities,635.0,Utilities - Jan-2026 - City Power & Water (Sales dept)
+2026-01-20,Expense,Office Supplies,591.0,Office Supplies - Jan-2026 - Staples Direct (Sales dept)
+2026-01-21,Income,Hardware,5000.0,Product A sale (20 units) - North region - P. Sharma
+2026-01-22,Income,Accessories,300.0,Product E sale (5 units) - North region - T. Iyer
+2026-01-22,Expense,IT & Software,1215.0,IT & Software - Jan-2026 - SaaSHub (IT dept)
+2026-01-23,Expense,IT & Software,1436.0,IT & Software - Jan-2026 - SaaSHub (Operations dept)
+2026-01-24,Income,Accessories,1620.0,Product E sale (27 units) - West region - A. Kapoor
+2026-01-24,Expense,Office Supplies,471.0,Office Supplies - Jan-2026 - OfficeMart (Finance dept)
+2026-01-25,Income,Hardware,2250.0,Product A sale (9 units) - East region - R. Menon
+2026-01-26,Income,Hardware,5400.0,Product B sale (30 units) - North region - P. Sharma
+2026-01-28,Income,Accessories,300.0,Product E sale (5 units) - East region - S. Rao
+2026-02-02,Expense,Office Supplies,353.0,Office Supplies - Feb-2026 - OfficeMart (Marketing dept)
+2026-02-03,Income,Accessories,1380.0,Product E sale (23 units) - South region - P. Sharma
+2026-02-03,Expense,Travel,573.0,Travel - Feb-2026 - CityCab Corp (Operations dept)
+2026-02-05,Income,Hardware,6840.0,Product B sale (38 units) - East region - R. Menon
+2026-02-06,Income,Accessories,1900.0,Product C sale (20 units) - East region - R. Menon
+2026-02-07,Income,Software,13440.0,Product D sale (32 units) - West region - P. Sharma
+2026-02-08,Expense,Office Supplies,390.0,Office Supplies - Feb-2026 - Staples Direct (Finance dept)
+2026-02-09,Income,Accessories,1615.0,Product C sale (17 units) - South region - A. Kapoor
+2026-02-09,Income,Hardware,9250.0,Product A sale (37 units) - North region - P. Sharma
+2026-02-10,Expense,Utilities,780.0,Utilities - Feb-2026 - City Power & Water (Sales dept)
+2026-02-13,Income,Hardware,6300.0,Product B sale (35 units) - East region - R. Menon
+2026-02-13,Income,Accessories,2160.0,Product E sale (36 units) - West region - T. Iyer
+2026-02-13,Income,Accessories,2160.0,Product E sale (36 units) - West region - T. Iyer
+2026-02-13,Expense,Rent,3000.0,Rent - Feb-2026 - Skyline Properties (IT dept)
+2026-02-13,Expense,Insurance,439.0,Insurance - Feb-2026 - SecureGuard Insurance (HR dept)
+2026-02-15,Expense,Marketing,2360.0,Marketing - Feb-2026 - SocialBoost Inc (HR dept)
+2026-02-15,Expense,IT & Software,1101.0,IT & Software - Feb-2026 - CloudTech Solutions (HR dept)
+2026-02-16,Income,Hardware,3000.0,Product A sale (12 units) - North region - A. Kapoor
+2026-02-17,Expense,Marketing,3309.0,Marketing - Feb-2026 - BrightAds Agency (HR dept)
+2026-02-18,Income,Hardware,4860.0,Product B sale (27 units) - South region - T. Iyer
+2026-02-18,Income,Accessories,2400.0,Product E sale (40 units) - East region - T. Iyer
+2026-02-21,Income,Software,2940.0,Product D sale (7 units) - South region - M. Fernandes
+2026-02-22,Expense,Salaries,9861.0,Salaries - Feb-2026 - Payroll - ADP (Finance dept)
+2026-02-22,Expense,Travel,1369.0,Travel - Feb-2026 - SkyLine Airlines (Finance dept)
+2026-02-23,Income,Accessories,780.0,Product E sale (13 units) - North region - P. Sharma
+2026-02-23,Expense,IT & Software,1448.0,IT & Software - Feb-2026 - CloudTech Solutions (Finance dept)
+2026-02-25,Income,Accessories,1995.0,Product C sale (21 units) - East region - A. Kapoor
+2026-02-27,Income,Accessories,1900.0,Product C sale (20 units) - North region - T. Iyer
+2026-03-01,Income,Accessories,1710.0,Product C sale (18 units) - North region - S. Rao
+2026-03-02,Income,Accessories,480.0,Product E sale (8 units) - South region - A. Kapoor
+2026-03-02,Expense,Utilities,856.0,Utilities - Mar-2026 - City Power & Water (IT dept)
+2026-03-03,Income,Hardware,9500.0,Product A sale (38 units) - East region - M. Fernandes
+2026-03-03,Expense,IT & Software,1089.0,IT & Software - Mar-2026 - SaaSHub (Operations dept)
+2026-03-05,Income,Accessories,1140.0,Product E sale (19 units) - West region - R. Menon
+2026-03-06,Expense,Rent,3000.0,Rent - Mar-2026 - Skyline Properties (HR dept)
+2026-03-08,Income,Hardware,1500.0,Product A sale (6 units) - South region - A. Kapoor
+2026-03-08,Income,Hardware,1750.0,Product A sale (7 units) - North region - S. Rao
+2026-03-09,Expense,Insurance,441.0,Insurance - Mar-2026 - SecureGuard Insurance (Operations dept)
+2026-03-14,Income,Software,7980.0,Product D sale (19 units) - South region - A. Kapoor
+2026-03-15,Income,Hardware,4250.0,Product A sale (17 units) - West region - R. Menon
+2026-03-15,Expense,Marketing,3783.0,Marketing - Mar-2026 - BrightAds Agency (Marketing dept)
+2026-03-17,Income,Accessories,1320.0,Product E sale (22 units) - South region - A. Kapoor
+not_a_date,Expense,Travel,120,Invalid date - needs cleaning
+2026-03-17,Income,Hardware,2700.0,Product B sale (15 units) - West region - M. Fernandes
+2026-03-17,Income,Accessories,3230.0,Product C sale (34 units) - South region - P. Sharma
+2026-03-18,Income,Accessories,2040.0,Product E sale (34 units) - North region - S. Rao
+2026-03-21,Expense,IT & Software,2192.0,IT & Software - Mar-2026 - SaaSHub (IT dept)
+2026-03-23,Income,Software,10920.0,Product D sale (26 units) - East region - P. Sharma
+2026-03-24,Income,Hardware,2750.0,Product A sale (11 units) - West region - M. Fernandes
+2026-03-24,Expense,Travel,1522.0,Travel - Mar-2026 - SkyLine Airlines (HR dept)
+2026-03-25,Expense,Salaries,9499.0,Salaries - Mar-2026 - Payroll - ADP (Marketing dept)
+2026-03-25,Expense,Marketing,2046.0,Marketing - Mar-2026 - SocialBoost Inc (HR dept)
+2026-03-25,Expense,Office Supplies,636.0,Office Supplies - Mar-2026 - Staples Direct (HR dept)
+2026-03-25,Expense,Office Supplies,403.0,Office Supplies - Mar-2026 - Staples Direct (Finance dept)
+2026-03-27,Income,Hardware,2340.0,Product B sale (13 units) - South region - S. Rao
+2026-03-27,Expense,Travel,1306.0,Travel - Mar-2026 - CityCab Corp (IT dept)
+2026-04-01,Expense,Travel,1579.0,Travel - Apr-2026 - CityCab Corp (HR dept)
+2026-04-02,Income,Software,11340.0,Product D sale (27 units) - South region - A. Kapoor
+2026-04-02,Income,Hardware,10000.0,Product A sale (40 units) - East region - A. Kapoor
+2026-04-03,Expense,Utilities,578.0,Utilities - Apr-2026 - City Power & Water (Finance dept)
+2026-04-04,Income,Accessories,2755.0,Product C sale (29 units) - West region - T. Iyer
+2026-04-05,Expense,Salaries,9687.0,Salaries - Apr-2026 - Payroll - ADP (Operations dept)
+2026-04-07,Income,Accessories,1980.0,Product E sale (33 units) - South region - M. Fernandes
+2026-04-07,Income,Hardware,2520.0,Product B sale (14 units) - West region - T. Iyer
+2026-04-07,Income,Accessories,2220.0,Product E sale (37 units) - North region - P. Sharma
+2026-04-07,Expense,Marketing,3408.0,Marketing - Apr-2026 - BrightAds Agency (HR dept)
+2026-04-08,Income,Software,3780.0,Product D sale (9 units) - West region - R. Menon
+2026-04-09,Income,Hardware,5580.0,Product B sale (31 units) - West region - A. Kapoor
+2026-04-09,Income,Accessories,3610.0,Product C sale (38 units) - West region - T. Iyer
+2026-04-14,Income,Software,11760.0,Product D sale (28 units) - West region - R. Menon
+2026-04-15,Income,Hardware,7000.0,Product A sale (28 units) - North region - A. Kapoor
+2026-04-16,Expense,Office Supplies,579.0,Office Supplies - Apr-2026 - OfficeMart (IT dept)
+2026-04-16,Expense,IT & Software,1049.0,IT & Software - Apr-2026 - SaaSHub (Operations dept)
+2026-04-18,Expense,Marketing,3199.0,Marketing - Apr-2026 - SocialBoost Inc (HR dept)
+2026-04-22,Income,Hardware,3780.0,Product B sale (21 units) - West region - R. Menon
+2026-04-22,Expense,IT & Software,659.0,IT & Software - Apr-2026 - SaaSHub (HR dept)
+2026-04-23,Expense,Rent,3000.0,Rent - Apr-2026 - Skyline Properties (Marketing dept)
+2026-04-24,Income,Hardware,3750.0,Product A sale (15 units) - East region - R. Menon
+2026-04-26,Income,Hardware,9250.0,Product A sale (37 units) - North region - P. Sharma
+2026-04-27,Income,Hardware,3250.0,Product A sale (13 units) - North region - R. Menon
+2026-04-27,Expense,Insurance,436.0,Insurance - Apr-2026 - SecureGuard Insurance (HR dept)
+2026-04-28,Expense,Travel,1260.0,Travel - Apr-2026 - SkyLine Airlines (HR dept)
+2026-04-28,Expense,Office Supplies,510.0,Office Supplies - Apr-2026 - Staples Direct (Operations dept)
+2026-05-01,Income,Hardware,4750.0,Product A sale (19 units) - East region - R. Menon
+2026-05-04,Income,Accessories,1200.0,Product E sale (20 units) - North region - R. Menon
+2026-05-05,Expense,Rent,3000.0,Rent - May-2026 - Skyline Properties (Sales dept)
+2026-05-07,Expense,Office Supplies,191.0,Office Supplies - May-2026 - OfficeMart (Sales dept)
+2026-05-08,Income,Accessories,1740.0,Product E sale (29 units) - North region - A. Kapoor
+2026-05-08,Income,Software,9240.0,Product D sale (22 units) - East region - R. Menon
+2026-05-08,Income,Accessories,2945.0,Product C sale (31 units) - East region - R. Menon
+2026-05-08,Expense,IT & Software,641.0,IT & Software - May-2026 - CloudTech Solutions (IT dept)
+2026-05-09,Expense,Utilities,736.0,Utilities - May-2026 - City Power & Water (Marketing dept)
+2026-05-09,Expense,Marketing,2838.0,Marketing - May-2026 - SocialBoost Inc (Operations dept)
+2026-05-10,Income,Accessories,1805.0,Product C sale (19 units) - South region - R. Menon
+2026-05-12,Expense,Travel,439.0,Travel - May-2026 - SkyLine Airlines (Finance dept)
+2026-05-13,Expense,Salaries,9957.0,Salaries - May-2026 - Payroll - ADP (Marketing dept)
+2026-05-15,Income,Hardware,8000.0,Product A sale (32 units) - East region - A. Kapoor
+2026-05-15,Expense,Marketing,3052.0,Marketing - May-2026 - BrightAds Agency (Operations dept)
+2026-05-16,Income,Hardware,2000.0,Product A sale (8 units) - South region - M. Fernandes
+2026-05-16,Expense,Travel,1263.0,Travel - May-2026 - SkyLine Airlines (Operations dept)
+2026-05-17,Income,Hardware,1260.0,Product B sale (7 units) - East region - S. Rao
+2026-05-17,Income,Accessories,760.0,Product C sale (8 units) - West region - A. Kapoor
+2026-05-19,Expense,IT & Software,858.0,IT & Software - May-2026 - CloudTech Solutions (HR dept)
+2026-05-20,Income,Hardware,4000.0,Product A sale (16 units) - North region - M. Fernandes
+2026-05-22,Income,Software,16380.0,Product D sale (39 units) - South region - A. Kapoor
+2026-05-22,Income,Accessories,2185.0,Product C sale (23 units) - East region - R. Menon
+2026-05-25,Expense,Office Supplies,379.0,Office Supplies - May-2026 - OfficeMart (Finance dept)
+2026-05-25,Expense,Insurance,377.0,Insurance - May-2026 - SecureGuard Insurance (HR dept)
+2026-05-27,Income,Accessories,2160.0,Product E sale (36 units) - East region - P. Sharma
+2026-05-28,Income,Hardware,1750.0,Product A sale (7 units) - South region - M. Fernandes
+2026-06-01,Expense,Office Supplies,668.0,Office Supplies - Jun-2026 - Staples Direct (Finance dept)
+2026-06-03,Income,Accessories,1560.0,Product E sale (26 units) - South region - A. Kapoor
+2026-06-03,Expense,Office Supplies,588.0,Office Supplies - Jun-2026 - Staples Direct (Finance dept)
+2026-06-04,Expense,Marketing,4328.0,Marketing - Jun-2026 - BrightAds Agency (Finance dept)
+2026-06-06,Income,Software,7560.0,Product D sale (18 units) - East region - P. Sharma
+2026-06-08,Income,Hardware,720.0,Product B sale (4 units) - South region - T. Iyer
+2026-06-09,Income,Hardware,1250.0,Product A sale (5 units) - South region - T. Iyer
+2026-06-10,Income,Hardware,4000.0,Product A sale (16 units) - East region - S. Rao
+2026-06-11,Income,Accessories,2945.0,Product C sale (31 units) - South region - R. Menon
+2026-06-12,Income,Hardware,720.0,Product B sale (4 units) - East region - R. Menon
+2026-06-13,Expense,Utilities,513.0,Utilities - Jun-2026 - City Power & Water (Operations dept)
+2026-06-14,Expense,IT & Software,1460.0,IT & Software - Jun-2026 - CloudTech Solutions (HR dept)
+2026-06-18,Income,Accessories,600.0,Product E sale (10 units) - West region - A. Kapoor
+2026-06-18,Expense,Travel,1559.0,Travel - Jun-2026 - CityCab Corp (Sales dept)
+2026-06-19,Income,Software,2100.0,Product D sale (5 units) - South region - R. Menon
+2026-06-19,Expense,Rent,3000.0,Rent - Jun-2026 - Skyline Properties (Operations dept)
+2026-06-19,Expense,Marketing,4428.0,Marketing - Jun-2026 - BrightAds Agency (Marketing dept)
+2026-06-21,Income,Accessories,285.0,Product C sale (3 units) - West region - A. Kapoor
+2026-06-22,Income,Hardware,9500.0,Product A sale (38 units) - South region - S. Rao
+2026-06-22,Income,Software,8400.0,Product D sale (20 units) - South region - S. Rao
+2026-06-23,Expense,IT & Software,1341.0,IT & Software - Jun-2026 - SaaSHub (Finance dept)
+2026-06-24,Expense,Insurance,369.0,Insurance - Jun-2026 - SecureGuard Insurance (HR dept)
+2026-06-25,Expense,Salaries,9755.0,Salaries - Jun-2026 - Payroll - ADP (Marketing dept)
+2026-06-26,Expense,Travel,1017.0,Travel - Jun-2026 - SkyLine Airlines (Finance dept)
+2026-06-28,Income,Accessories,720.0,Product E sale (12 units) - West region - P. Sharma
+2026-06-28,Income,Hardware,5760.0,Product B sale (32 units) - West region - R. Menon
+2026-06-28,Income,Accessories,3325.0,Product C sale (35 units) - North region - S. Rao
