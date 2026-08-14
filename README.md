@@ -1,550 +1,701 @@
-# 📊 Monthly Financial Analysis Dashboard
+# Monthly Financial Analysis Dashboard
 
-A Python-based financial analytics tool that reads transaction data, cleans it, calculates key financial metrics, and presents everything through an interactive Streamlit dashboard — plus a downloadable executive summary report.
+## Complete Setup and Usage Note
 
----
+### 1. Project Overview
 
-## What It Does
+The **Monthly Financial Analysis Dashboard** is a Python-based financial analytics application that reads transaction data from a CSV file, cleans and validates the data, calculates important financial KPIs, and displays the results through an interactive Streamlit dashboard.
 
-- Reads transaction data from a CSV file (or a user-uploaded one)
-- Cleans and validates the data (handles missing values, duplicates, flexible column names)
-- Calculates core financial KPIs: revenue, expenses, net profit, savings rate, and growth rates
-- Breaks results down by month, category, region, and department
-- Detects statistical outliers in expenses
-- Visualizes everything through interactive charts (trend lines, bar charts, pie/donut charts, heatmaps, box plots, scatter plots)
-- Generates a written executive summary report (Markdown) and a downloadable CSV summary
+The project can analyze:
 
----
+* Revenue
+* Expenses
+* Net Profit
+* Savings Rate
+* Monthly Growth
+* Category-wise spending
+* Region-wise performance
+* Department-wise performance
+* Expense outliers
+* Transaction distributions
 
-## Tech Stack
-
-| Tool | Purpose |
-|---|---|
-| Python | Core logic |
-| Pandas / NumPy | Data cleaning and analysis |
-| Matplotlib / Seaborn | Charts |
-| Streamlit | Interactive dashboard |
-| Pytest | Automated tests |
+It also provides interactive charts and allows users to download a summary report.
 
 ---
 
-## Project Structure
+## 2. Project Folder
 
+The project is located at:
+
+```text
+C:\Users\dell\Downloads\Monthly_Financial_Analysis_Dashboard
 ```
+
+The expected project structure is:
+
+```text
 Monthly_Financial_Analysis_Dashboard/
 │
 ├── data/
-│   └── financial_data.csv        # Sample dataset
+│   └── financial_data.csv
 │
 ├── reports/
-│   └── summary_report.csv        # Generated summary output
+│   └── summary_report.csv
 │
 ├── tests/
-│   └── test_analysis.py          # Automated test suite
+│   └── test_analysis.py
 │
-├── config.py                     # Paths, colors, column names, app settings
-├── data_loader.py                # Loads and cleans the CSV
-├── analysis.py                   # Calculates financial metrics and KPIs
-├── visualization.py              # Builds all charts
-├── dashboard.py                  # Streamlit web app (main entry point)
-├── generate_report.py            # Creates the executive summary report
+├── config.py
+├── data_loader.py
+├── analysis.py
+├── visualization.py
+├── dashboard.py
+├── generate_report.py
 └── requirements.txt
 ```
 
-Each file has a single, clear responsibility — open any of them and follow the flow from raw data → cleaning → analysis → charts.
+### File Responsibilities
+
+| File                      | Purpose                                                      |
+| ------------------------- | ------------------------------------------------------------ |
+| `config.py`               | Stores paths, colors, column names, and application settings |
+| `data_loader.py`          | Loads, cleans, validates, and prepares CSV data              |
+| `analysis.py`             | Calculates financial metrics and KPIs                        |
+| `visualization.py`        | Creates charts and visualizations                            |
+| `dashboard.py`            | Main Streamlit dashboard                                     |
+| `generate_report.py`      | Generates the executive summary report                       |
+| `tests/test_analysis.py`  | Automated tests                                              |
+| `data/financial_data.csv` | Sample transaction dataset                                   |
+| `reports/`                | Stores generated reports                                     |
 
 ---
 
-## Expected CSV Columns
+# 3. Required CSV Data
 
-The app works with a CSV containing:
+The default dataset is:
 
-| Column | Description |
-|---|---|
-| `Date` | Transaction date |
-| `Type` | `Income` or `Expense` |
-| `Category` | e.g. Salaries, Travel, Hardware, Software |
-| `Amount` | Transaction amount |
-| `Description` | Free-text description |
-
-The loader also recognizes common alternate column names (e.g. `Transaction Date`, `Net Amount`, `Notes`), so it can adapt to slightly different CSV formats without extra setup.
-
----
-
-## Setup and Run
-
-### 1. Open the project
-Open the project folder in VS Code, then open a terminal inside it (**Terminal → New Terminal**). Confirm the prompt shows you're inside the project folder.
-
-### 2. Create a virtual environment
-```bash
-python -m venv venv
-```
-
-### 3. Activate it
-```bash
-venv\Scripts\activate
-```
-You should see `(venv)` appear at the start of your terminal prompt.
-
-### 4. Upgrade pip
-```bash
-python -m pip install --upgrade pip
-```
-
-### 5. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-If `requirements.txt` isn't present, install directly:
-```bash
-pip install streamlit pandas numpy matplotlib seaborn pytest
-```
-
-| Package | Role |
-|---|---|
-| `streamlit` | Dashboard UI |
-| `pandas` | Data processing |
-| `numpy` | Calculations |
-| `matplotlib` | Charts |
-| `seaborn` | Enhanced chart styling (optional — falls back gracefully if missing) |
-| `pytest` | Automated tests |
-
-### 6. Confirm the sample data exists
-Check that `data/financial_data.csv` is present in the project folder — this is the bundled sample dataset used whenever you don't upload your own file.
-
-### 7. Run the test suite
-```bash
-pytest tests/test_analysis.py -v
-```
-All tests should report `PASSED`. If anything fails, resolve it before moving on — the dashboard depends on the same functions being tested here.
-
-### 8. Launch the dashboard
-```bash
-streamlit run dashboard.py
-```
-This opens your browser to **http://localhost:8501**. If it doesn't open automatically, visit that URL manually.
-
-### 9. (Optional) Generate the executive summary report
-In a separate terminal (with `venv` still active):
-```bash
-python generate_report.py
-```
-This writes a Markdown report to `reports/executive_summary.md`.
-
----
-
-## Using the Dashboard
-
-**Sidebar filters:**
-- Year, Month, Category, Region, Department
-
-**Chart tabs:**
-1. **Trends** — revenue over time (Line / Bar / Area)
-2. **Category Breakdown** — spending by category (Pie / Donut / Horizontal Bar)
-3. **Distribution** — spread of transaction amounts (Heatmap / Histogram / Box Plot)
-4. **Comparisons** — income vs. expense scatter plot, plus region and department summary tables
-
-**Chart style switching:** each tab's chart type can be changed live from the sidebar.
-
-**Upload your own data:** use the file uploader in the sidebar to analyze your own CSV instead of the bundled sample — no code changes required, as long as the required columns are present (or recognizable aliases).
-
-**Export:** use the **Download Summary Report (CSV)** button to export the currently filtered KPI summary.
-
----
-
-## Quick Command Reference
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-pytest tests/test_analysis.py -v
-streamlit run dashboard.py
-
-# optional
-python generate_report.py
-```
-
----
-
-## Troubleshooting
-
-| Problem | Fix |
-|---|---|
-| `(venv)` doesn't appear after activating | Make sure you're running the activate command from inside the project folder, and that you're using the Windows path syntax (`venv\Scripts\activate`) |
-| `ModuleNotFoundError` | Confirm the virtual environment is active, then re-run `pip install -r requirements.txt` |
-| Tests fail | Copy the full error message before continuing — don't proceed to the dashboard step until tests pass, since the dashboard relies on the same underlying functions |
-| Dashboard won't open in browser | Manually visit `http://localhost:8501` |
-| Uploaded CSV throws a column error | Check it includes `Date`, `Type`, `Category`, `Amount`, `Description` (or a recognized alias) and that `Type` contains only `Income`/`Expense` values |
-
----
-
-## Notes
-
-- The codebase is intentionally modular and beginner-friendly — each file has one clear job.
-- Data cleaning statistics (rows dropped for invalid dates/amounts or duplicates) are surfaced in the dashboard sidebar for transparency.
-- This project uses the bundled sample dataset (`data/financial_data.csv`) by default; no external API or database connection is required.
-============================================================
-MONTHLY FINANCIAL ANALYSIS DASHBOARD
-COMPLETE SETUP GUIDE
-============================================================
-
-PROJECT FOLDER:
-C:\Users\dell\Downloads\Monthly_Financial_Analysis_Dashboard
-
-
-STEP 1 — OPEN THE PROJECT
--------------------------
-
-1. Open VS Code.
-
-2. Click:
-   File → Open Folder
-
-3. Select:
-   C:\Users\dell\Downloads\Monthly_Financial_Analysis_Dashboard
-
-4. Click "Select Folder".
-
-5. Open the VS Code terminal:
-   Terminal → New Terminal
-
-6. Make sure the terminal is inside the project folder.
-
-   It should look similar to:
-
-   PS C:\Users\dell\Downloads\Monthly_Financial_Analysis_Dashboard>
-
-
-============================================================
-STEP 2 — CREATE A VIRTUAL ENVIRONMENT
-============================================================
-
-In the terminal, run:
-
-python -m venv venv
-
-Press Enter.
-
-This creates a "venv" folder inside your project.
-
-
-============================================================
-STEP 3 — ACTIVATE THE VIRTUAL ENVIRONMENT
-============================================================
-
-Run:
-
-venv\Scripts\activate
-
-Press Enter.
-
-You should now see "(venv)" at the beginning of your terminal.
-
-Example:
-
-(venv) PS C:\Users\dell\Downloads\Monthly_Financial_Analysis_Dashboard>
-
-
-IMPORTANT:
-If you see "(venv)", the virtual environment is active.
-
-
-============================================================
-STEP 4 — UPGRADE PIP
-============================================================
-
-Run:
-
-python -m pip install --upgrade pip
-
-Press Enter.
-
-Wait until it finishes.
-
-
-============================================================
-STEP 5 — INSTALL REQUIRED PACKAGES
-============================================================
-
-Run:
-
-pip install streamlit pandas numpy matplotlib seaborn pytest
-
-Press Enter.
-
-Wait until all packages finish installing.
-
-
-The packages are:
-
-streamlit  = Dashboard
-pandas     = Data processing
-numpy      = Calculations
-matplotlib = Charts
-seaborn    = Better charts
-pytest     = Testing
-
-
-============================================================
-STEP 6 — CHECK THE DATA FILE
-============================================================
-
-In VS Code, look at the Explorer on the left.
-
-You should have:
-
-Monthly_Financial_Analysis_Dashboard
-│
-├── data
-│   └── financial_data.csv
-│
-├── tests
-│   └── test_analysis.py
-│
-├── analysis.py
-├── dashboard.py
-├── data_loader.py
-├── visualization.py
-└── generate_report.py
-
-
-IMPORTANT:
-
-This file must exist:
-
+```text
 data\financial_data.csv
+```
 
-If you can see "financial_data.csv" inside the "data" folder,
-continue to the next step.
+The expected columns are:
 
-
-============================================================
-STEP 7 — RUN THE TESTS
-============================================================
-
-Make sure "(venv)" is still visible in the terminal.
-
-Run:
-
-pytest tests\test_analysis.py -v
-
-Press Enter.
-
-You should see:
-
-PASSED
-
-for the tests.
-
-Example:
-
-PASSED
-PASSED
-PASSED
-
-
-IMPORTANT:
-
-If all tests pass:
-    Continue to Step 8.
-
-If you get an ERROR:
-    Stop here and copy the error message.
-    Do not continue until the error is fixed.
-
-
-============================================================
-STEP 8 — START THE DASHBOARD
-============================================================
-
-Run:
-
-streamlit run dashboard.py
-
-Press Enter.
-
-Streamlit should show something similar to:
-
-Local URL: http://localhost:8501
-
-Your browser may open automatically.
-
-If it does not open automatically, open your browser and go to:
-
-http://localhost:8501
-
-
-============================================================
-STEP 9 — USE THE DASHBOARD
-============================================================
-
-The dashboard should contain:
-
-SIDEBAR FILTERS:
-- Year
-- Month
-- Category
-- Region
-- Department
-
-
-CHART TABS:
-1. Trends
-2. Category Breakdown
-3. Distribution
-4. Comparisons
-
-
-Try changing the filters and check how the charts change.
-
-
-============================================================
-STEP 10 — UPLOAD YOUR OWN CSV (OPTIONAL)
-============================================================
-
-You can upload your own financial CSV file.
-
-Your CSV should contain columns similar to:
-
+```text
 Date
 Type
 Category
 Amount
 Description
+```
 
-The project also supports some flexible column-name aliases.
+Example:
 
+| Date       | Type    | Category | Amount | Description       |
+| ---------- | ------- | -------- | -----: | ----------------- |
+| 2026-01-05 | Income  | Sales    |  50000 | Monthly sales     |
+| 2026-01-08 | Expense | Salaries |  15000 | Employee salaries |
+| 2026-01-12 | Expense | Travel   |   3000 | Business travel   |
+| 2026-01-20 | Income  | Services |  25000 | Service income    |
 
-============================================================
-STEP 11 — CHANGE CHART STYLES (OPTIONAL)
-============================================================
+The application can also recognize some alternate column names, such as:
 
-You can change chart styles from the sidebar.
+* `Transaction Date` → `Date`
+* `Net Amount` → `Amount`
+* `Notes` → `Description`
 
-TREND CHARTS:
-- Line
-- Bar
-- Area
+The `Type` column should contain:
 
-CATEGORY CHARTS:
-- Pie
-- Donut
-- Bar
+```text
+Income
+Expense
+```
 
-DISTRIBUTION CHARTS:
-- Heatmap
-- Histogram
-- Box Plot
+---
 
+# 4. Open the Project in VS Code
 
-============================================================
-STEP 12 — GENERATE THE EXECUTIVE SUMMARY (OPTIONAL)
-============================================================
+1. Open **Visual Studio Code**.
+2. Select:
 
-If you want a written report:
+```text
+File → Open Folder
+```
 
-1. Keep the dashboard running.
+3. Select:
 
-2. Open another VS Code terminal.
+```text
+C:\Users\dell\Downloads\Monthly_Financial_Analysis_Dashboard
+```
 
-3. Make sure "(venv)" is active.
+4. Open the VS Code terminal:
 
-4. Run:
+```text
+Terminal → New Terminal
+```
 
+The terminal should show something similar to:
+
+```text
+PS C:\Users\dell\Downloads\Monthly_Financial_Analysis_Dashboard>
+```
+
+This confirms that the terminal is working inside the project folder.
+
+---
+
+# 5. Create a Virtual Environment
+
+Run:
+
+```powershell
+python -m venv venv
+```
+
+This creates a separate Python environment named:
+
+```text
+venv
+```
+
+The virtual environment keeps the project's packages separate from other Python projects on the computer.
+
+---
+
+# 6. Activate the Virtual Environment
+
+For Windows PowerShell, run:
+
+```powershell
+venv\Scripts\activate
+```
+
+After successful activation, the terminal should look similar to:
+
+```text
+(venv) PS C:\Users\dell\Downloads\Monthly_Financial_Analysis_Dashboard>
+```
+
+The important part is:
+
+```text
+(venv)
+```
+
+---
+
+# 7. Upgrade pip
+
+Run:
+
+```powershell
+python -m pip install --upgrade pip
+```
+
+Wait until the command finishes successfully.
+
+---
+
+# 8. Install Required Packages
+
+If `requirements.txt` exists, use:
+
+```powershell
+pip install -r requirements.txt
+```
+
+Alternatively, install the required packages directly:
+
+```powershell
+pip install streamlit pandas numpy matplotlib seaborn pytest
+```
+
+### Package Purpose
+
+| Package    | Purpose                     |
+| ---------- | --------------------------- |
+| Streamlit  | Interactive dashboard       |
+| Pandas     | Data loading and processing |
+| NumPy      | Numerical calculations      |
+| Matplotlib | Charts                      |
+| Seaborn    | Advanced chart styling      |
+| Pytest     | Automated testing           |
+
+---
+
+# 9. Verify the Sample Data
+
+In the VS Code Explorer, confirm that this file exists:
+
+```text
+data\financial_data.csv
+```
+
+If the file is present, continue.
+
+If it is missing, the dashboard may not be able to load the default sample data.
+
+---
+
+# 10. Run the Automated Tests
+
+Before starting the dashboard, test the analysis functions.
+
+Run:
+
+```powershell
+pytest tests\test_analysis.py -v
+```
+
+The tests should display results containing:
+
+```text
+PASSED
+```
+
+For example:
+
+```text
+test_analysis.py::test_revenue PASSED
+test_analysis.py::test_expenses PASSED
+test_analysis.py::test_profit PASSED
+```
+
+The exact test names may differ depending on the implementation.
+
+### Important
+
+If the tests fail, stop and fix the error before starting the dashboard.
+
+Copy the complete error message if assistance is needed.
+
+---
+
+# 11. Start the Streamlit Dashboard
+
+After the tests pass, run:
+
+```powershell
+streamlit run dashboard.py
+```
+
+Streamlit should display something similar to:
+
+```text
+Local URL: http://localhost:8501
+```
+
+Open the following address in your browser:
+
+```text
+http://localhost:8501
+```
+
+The dashboard should now be available.
+
+---
+
+# 12. Dashboard Features
+
+The dashboard provides several filters in the sidebar.
+
+### Filters
+
+* Year
+* Month
+* Category
+* Region
+* Department
+
+Changing these filters updates the financial analysis and charts.
+
+---
+
+# 13. Dashboard Tabs
+
+## Tab 1 — Trends
+
+The Trends section shows financial performance over time.
+
+Available chart styles include:
+
+* Line Chart
+* Bar Chart
+* Area Chart
+
+This section can be used to identify increases or decreases in revenue and financial performance.
+
+---
+
+## Tab 2 — Category Breakdown
+
+This section analyzes expenses or transactions by category.
+
+Available chart styles include:
+
+* Pie Chart
+* Donut Chart
+* Horizontal Bar Chart
+
+Example categories:
+
+* Salaries
+* Travel
+* Hardware
+* Software
+* Marketing
+* Utilities
+
+---
+
+## Tab 3 — Distribution
+
+This section analyzes the distribution of transaction amounts.
+
+Available visualizations include:
+
+* Heatmap
+* Histogram
+* Box Plot
+
+The box plot can also help identify unusually large or small transactions.
+
+---
+
+## Tab 4 — Comparisons
+
+This section compares different parts of the business.
+
+It can include:
+
+* Income vs. Expense scatter plots
+* Region summaries
+* Department summaries
+
+This makes it easier to compare financial performance across different business areas.
+
+---
+
+# 14. Financial KPIs
+
+The application calculates important financial metrics.
+
+### Revenue
+
+Total income:
+
+```text
+Revenue = Total Income
+```
+
+### Expenses
+
+Total expenses:
+
+```text
+Expenses = Total Expense
+```
+
+### Net Profit
+
+```text
+Net Profit = Revenue - Expenses
+```
+
+### Savings Rate
+
+A typical savings-rate calculation is:
+
+```text
+Savings Rate = (Net Profit / Revenue) × 100
+```
+
+### Growth Rate
+
+Growth can be calculated by comparing the current period with the previous period.
+
+```text
+Growth Rate =
+((Current Period - Previous Period) / Previous Period) × 100
+```
+
+The exact implementation should follow the formulas defined in `analysis.py`.
+
+---
+
+# 15. Data Cleaning
+
+The data loader is responsible for preparing the raw CSV data.
+
+It can handle issues such as:
+
+* Missing values
+* Invalid dates
+* Invalid amounts
+* Duplicate transactions
+* Alternate column names
+* Invalid transaction types
+
+The dashboard can also display cleaning statistics so the user can understand how much data was removed or corrected.
+
+---
+
+# 16. Upload Your Own CSV
+
+The dashboard includes a file-upload option.
+
+You can upload your own financial CSV instead of using:
+
+```text
+data\financial_data.csv
+```
+
+Your CSV should contain the required information:
+
+```text
+Date
+Type
+Category
+Amount
+Description
+```
+
+The application may also recognize supported alternate column names.
+
+The `Type` field should contain valid values such as:
+
+```text
+Income
+Expense
+```
+
+---
+
+# 17. Download the Summary
+
+The dashboard provides a:
+
+```text
+Download Summary Report (CSV)
+```
+
+button.
+
+This allows the currently filtered financial summary to be downloaded as a CSV file.
+
+The generated summary can be used for further analysis in Excel or other data-analysis tools.
+
+---
+
+# 18. Generate the Executive Summary
+
+The executive summary can be generated separately.
+
+Open another terminal while the virtual environment is active.
+
+Run:
+
+```powershell
 python generate_report.py
+```
 
-Press Enter.
+The report should be generated in:
 
-The report should be created here:
-
+```text
 reports\executive_summary.md
+```
 
+The report provides a written summary of the financial results.
 
-============================================================
-QUICK COMMANDS — RUN IN THIS ORDER
-============================================================
+---
 
-COMMAND 1:
+# 19. Complete Command Sequence
+
+For a fresh setup, run these commands in order:
+
+```powershell
+cd "C:\Users\dell\Downloads\Monthly_Financial_Analysis_Dashboard"
 
 python -m venv venv
 
-
-COMMAND 2:
-
 venv\Scripts\activate
-
-
-COMMAND 3:
 
 python -m pip install --upgrade pip
 
-
-COMMAND 4:
-
-pip install streamlit pandas numpy matplotlib seaborn pytest
-
-
-COMMAND 5:
+pip install -r requirements.txt
 
 pytest tests\test_analysis.py -v
 
-
-COMMAND 6:
-
 streamlit run dashboard.py
+```
 
+If `requirements.txt` is not available, use:
 
-OPTIONAL COMMAND:
+```powershell
+pip install streamlit pandas numpy matplotlib seaborn pytest
+```
 
+Then run:
+
+```powershell
+pytest tests\test_analysis.py -v
+```
+
+and finally:
+
+```powershell
+streamlit run dashboard.py
+```
+
+---
+
+# 20. Optional Report Command
+
+After activating the virtual environment:
+
+```powershell
 python generate_report.py
+```
 
+Expected output:
 
-============================================================
-IF SOMETHING GOES WRONG
-============================================================
+```text
+reports\executive_summary.md
+```
 
-If you get an error:
+---
 
-1. Do not delete the project.
-2. Do not create another project.
-3. Copy the complete error from the terminal.
-4. Send the error to me.
+# 21. Troubleshooting
 
-I can tell you exactly which command to run to fix it.
+### Problem: `(venv)` does not appear
 
+Run:
 
-============================================================
-FINAL CHECK
-============================================================
+```powershell
+venv\Scripts\activate
+```
 
-[ ] Project opened in VS Code
-[ ] Terminal is inside the project folder
-[ ] Virtual environment created
-[ ] Virtual environment activated
-[ ] "(venv)" appears in terminal
-[ ] pip upgraded
-[ ] Required packages installed
-[ ] data\financial_data.csv exists
-[ ] Tests passed
-[ ] Dashboard started
-[ ] http://localhost:8501 opens
-[ ] Dashboard filters work
-[ ] Charts work
-[ ] Executive report generated (optional)
+Make sure you are inside the project folder.
 
+---
 
-============================================================
-DONE!
-============================================================
+### Problem: `ModuleNotFoundError`
 
-Your dashboard is ready when:
+Make sure the virtual environment is active:
 
+```text
+(venv)
+```
+
+Then install the packages:
+
+```powershell
+pip install streamlit pandas numpy matplotlib seaborn pytest
+```
+
+---
+
+### Problem: Tests fail
+
+Run:
+
+```powershell
+pytest tests\test_analysis.py -v
+```
+
+Read the complete error message and fix the reported issue before starting Streamlit.
+
+---
+
+### Problem: Dashboard does not open automatically
+
+Start the application:
+
+```powershell
 streamlit run dashboard.py
+```
 
-starts successfully and you can open:
+Then manually open:
 
+```text
 http://localhost:8501
+```
+
+---
+
+### Problem: CSV column error
+
+Check that the uploaded CSV contains:
+
+```text
+Date
+Type
+Category
+Amount
+Description
+```
+
+Also check that `Type` contains valid values such as:
+
+```text
+Income
+Expense
+```
+
+---
+
+# 22. Final Verification Checklist
+
+* [ ] Project opened in VS Code
+* [ ] Terminal is inside the project folder
+* [ ] Virtual environment created
+* [ ] Virtual environment activated
+* [ ] `(venv)` appears in the terminal
+* [ ] pip upgraded
+* [ ] Required packages installed
+* [ ] `data\financial_data.csv` exists
+* [ ] Automated tests passed
+* [ ] Streamlit dashboard started
+* [ ] `http://localhost:8501` opens
+* [ ] Sidebar filters work
+* [ ] Trends charts work
+* [ ] Category charts work
+* [ ] Distribution charts work
+* [ ] Comparison section works
+* [ ] CSV download works
+* [ ] Executive report generated, if required
+
+---
+
+# 23. Final Result
+
+Once the setup is complete, the main command for using the application is:
+
+```powershell
+streamlit run dashboard.py
+```
+
+Then open:
+
+```text
+http://localhost:8501
+```
+
+The project provides a complete workflow:
+
+```text
+CSV Data
+   ↓
+Data Cleaning & Validation
+   ↓
+Financial Analysis
+   ↓
+KPI Calculation
+   ↓
+Interactive Streamlit Dashboard
+   ↓
+Charts & Comparisons
+   ↓
+CSV Summary / Executive Report
+```
+
+This gives you a modular, beginner-friendly financial analytics application where data loading, analysis, visualization, dashboard functionality, reporting, and testing are separated into their own components.
